@@ -90,6 +90,7 @@ class RegistViewController: UIViewController {
     @objc private func completeButtonTapped() {
         if textField.text != ""{
             Requestregister.PostJoin(userName: textField.text!) { UserResponse in
+                UserDefaults.standard.setValue(self.textField.text, forKey: "key")
                 self.dismiss(animated: true)
             }
         }
