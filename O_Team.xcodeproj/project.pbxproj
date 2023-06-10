@@ -22,6 +22,9 @@
 		0936A4092A34846E006A027B /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 0936A4082A34846E006A027B /* DGCharts */; };
 		0936A40B2A348987006A027B /* MonthCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936A40A2A348987006A027B /* MonthCalendarViewController.swift */; };
 		0936A40D2A34A14C006A027B /* EmotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936A40C2A34A14C006A027B /* EmotionCollectionViewCell.swift */; };
+		887030AB2A34F0B90086F7E3 /* Gifu in Frameworks */ = {isa = PBXBuildFile; productRef = 887030AA2A34F0B90086F7E3 /* Gifu */; };
+		887030AD2A34F34D0086F7E3 /* sample.gif in Resources */ = {isa = PBXBuildFile; fileRef = 887030AC2A34F34D0086F7E3 /* sample.gif */; };
+		88ECD9F82A34D32400556142 /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ECD9F72A34D32400556142 /* RegistViewController.swift */; };
 		DB24484B2A348FA2000C43AE /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24484A2A348FA2000C43AE /* UIFont+.swift */; };
 		DB24484F2A348FE1000C43AE /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB24484C2A348FE1000C43AE /* Pretendard-Bold.otf */; };
 		DB2448502A348FE1000C43AE /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB24484D2A348FE1000C43AE /* Pretendard-Regular.otf */; };
@@ -49,6 +52,8 @@
 		0936A3FC2A345094006A027B /* TempTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempTableViewCell.swift; sourceTree = "<group>"; };
 		0936A40A2A348987006A027B /* MonthCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCalendarViewController.swift; sourceTree = "<group>"; };
 		0936A40C2A34A14C006A027B /* EmotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCollectionViewCell.swift; sourceTree = "<group>"; };
+		887030AC2A34F34D0086F7E3 /* sample.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = sample.gif; path = ../../../sample.gif; sourceTree = "<group>"; };
+		88ECD9F72A34D32400556142 /* RegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
 		DB24484A2A348FA2000C43AE /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		DB24484C2A348FE1000C43AE /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		DB24484D2A348FE1000C43AE /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
@@ -73,6 +78,7 @@
 				0936A4092A34846E006A027B /* DGCharts in Frameworks */,
 				0936A4002A3453EF006A027B /* SnapKit in Frameworks */,
 				0936A4062A3471D5006A027B /* Then in Frameworks */,
+				887030AB2A34F0B90086F7E3 /* Gifu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +144,7 @@
 				0936A3F82A345066006A027B /* TempViewController.swift */,
 				0936A40A2A348987006A027B /* MonthCalendarViewController.swift */,
 				DB2448542A349240000C43AE /* HomeViewController.swift */,
+				88ECD9F72A34D32400556142 /* RegistViewController.swift */,
 				DB58FF232A34D55700D8ABE4 /* MainTabbarController.swift */,
 				DB58FF272A34E2E200D8ABE4 /* RecordViewController.swift */,
 			);
@@ -147,6 +154,7 @@
 		DB2448472A348F4F000C43AE /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				887030AC2A34F34D0086F7E3 /* sample.gif */,
 				DB24484C2A348FE1000C43AE /* Pretendard-Bold.otf */,
 				DB24484E2A348FE1000C43AE /* Pretendard-Medium.otf */,
 				DB24484D2A348FE1000C43AE /* Pretendard-Regular.otf */,
@@ -180,9 +188,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0936A3EA2A344ECB006A027B /* Build configuration list for PBXNativeTarget "O_Team" */;
 			buildPhases = (
+				407734A521AC9B47481293C1 /* [CP] Check Pods Manifest.lock */,
 				0936A3D22A344EC9006A027B /* Sources */,
 				0936A3D32A344EC9006A027B /* Frameworks */,
 				0936A3D42A344EC9006A027B /* Resources */,
+				3D6F81FB8A669DF78ADD4C16 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,6 +205,7 @@
 				0936A4022A34598A006A027B /* FSCalendar */,
 				0936A4052A3471D5006A027B /* Then */,
 				0936A4082A34846E006A027B /* DGCharts */,
+				887030AA2A34F0B90086F7E3 /* Gifu */,
 			);
 			productName = O_Team;
 			productReference = 0936A3D62A344EC9006A027B /* O_Team.app */;
@@ -230,6 +241,7 @@
 				0936A4012A34598A006A027B /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				0936A4042A3471D5006A027B /* XCRemoteSwiftPackageReference "Then" */,
 				0936A4072A34846E006A027B /* XCRemoteSwiftPackageReference "Charts" */,
+				887030A92A34F0B90086F7E3 /* XCRemoteSwiftPackageReference "Gifu" */,
 			);
 			productRefGroup = 0936A3D72A344EC9006A027B /* Products */;
 			projectDirPath = "";
@@ -249,11 +261,54 @@
 				DB2448512A348FE1000C43AE /* Pretendard-Medium.otf in Resources */,
 				DB2448502A348FE1000C43AE /* Pretendard-Regular.otf in Resources */,
 				DB24484F2A348FE1000C43AE /* Pretendard-Bold.otf in Resources */,
+				887030AD2A34F34D0086F7E3 /* sample.gif in Resources */,
 				0936A3E32A344ECB006A027B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D6F81FB8A669DF78ADD4C16 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-O_Team/Pods-O_Team-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-O_Team/Pods-O_Team-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-O_Team/Pods-O_Team-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		407734A521AC9B47481293C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-O_Team-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0936A3D22A344EC9006A027B /* Sources */ = {
@@ -273,6 +328,7 @@
 				DB2448552A349240000C43AE /* HomeViewController.swift in Sources */,
 				DB58FF2C2A34E99D00D8ABE4 /* ChatLabel.swift in Sources */,
 				0936A3DE2A344EC9006A027B /* ViewController.swift in Sources */,
+				88ECD9F82A34D32400556142 /* RegistViewController.swift in Sources */,
 				DB2448572A349C6F000C43AE /* MemoryCardCell.swift in Sources */,
 				0936A3DA2A344EC9006A027B /* AppDelegate.swift in Sources */,
 				0936A3DC2A344EC9006A027B /* SceneDelegate.swift in Sources */,
@@ -526,6 +582,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		887030A92A34F0B90086F7E3 /* XCRemoteSwiftPackageReference "Gifu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kaishin/Gifu";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -553,6 +617,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0936A4072A34846E006A027B /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = DGCharts;
+		};
+		887030AA2A34F0B90086F7E3 /* Gifu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 887030A92A34F0B90086F7E3 /* XCRemoteSwiftPackageReference "Gifu" */;
+			productName = Gifu;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
