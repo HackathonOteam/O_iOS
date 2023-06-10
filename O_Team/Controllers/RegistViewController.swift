@@ -69,7 +69,7 @@ class RegistViewController: UIViewController {
             $0.left.equalToSuperview().offset(81)
             $0.top.equalToSuperview().offset(234)
             $0.width.equalTo(203)
-            $0.height.equalTo(141)
+            $0.height.equalTo(203)
         }
         
         textField.snp.makeConstraints {
