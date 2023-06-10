@@ -19,6 +19,7 @@ final class MemoryCardCell: UICollectionViewCell {
     
     private let imotionImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
+        $0.image = UIImage(named: "HappyEmotion")?.withRenderingMode(.alwaysOriginal)
     }
     
     private let dateLabel = UILabel().then {
