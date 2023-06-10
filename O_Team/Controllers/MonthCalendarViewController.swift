@@ -55,7 +55,8 @@ class MonthCalendarViewController: UIViewController {
         navigationController!.navigationBar.scrollEdgeAppearance = navigationBarAppearance
         self.view.backgroundColor = .BackGroundColor
         self.navigationItem.title = "이번달감정"
-        //스크롤뷰 생서
+        // 스크롤 뷰 생성
+        scrollView.showsVerticalScrollIndicator = false
         scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = true
         view.addSubview(scrollView)
