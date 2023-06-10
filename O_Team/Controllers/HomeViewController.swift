@@ -16,7 +16,7 @@ final class HomeViewController: UIViewController {
     }
     
     private let titleLabel = UILabel().then {
-        $0.text = "똴랄라뚤랄라님,\n기억해야 할 것들을\n알려드릴게요."
+        $0.text = UserDefaults.standard.string(forKey: "key")
         $0.font = .pretendard(.medium, size: 20)
         $0.textColor = .white
         $0.numberOfLines = 0
