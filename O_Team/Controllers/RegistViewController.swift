@@ -10,6 +10,7 @@ import SnapKit
 import Gifu
 
 class RegistViewController: UIViewController {
+    let Requestregister = UserService()
     let textField = UITextField()
     let completeButton = UIButton()
     let label = UILabel()
@@ -87,6 +88,14 @@ class RegistViewController: UIViewController {
     }
     
     @objc private func completeButtonTapped() {
+        if textField.text != ""{
+            Requestregister.PostJoin(userName: textField.text!) { UserResponse in
+                self.dismiss(animated: true)
+            }
+        }
+        else{
+            print("ㄴ")
+        }
         // let nextViewController = NextViewController()
         // nextViewController.name = name
         // navigationController?.pushViewController(nextViewController, animated: true)
