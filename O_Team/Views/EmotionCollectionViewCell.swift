@@ -4,6 +4,7 @@ import SnapKit
 class EmotionCollectionViewCell: UICollectionViewCell {
     let imageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = UIImage(named: "HappyEmotion")
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         return imageView
@@ -14,7 +15,7 @@ class EmotionCollectionViewCell: UICollectionViewCell {
         label.textColor = .black
         label.font = UIFont(name: "Pretendard-Regular", size: 12)
         label.textAlignment = .center
-        label.text="asdasd"
+        label.text="6월11일"
         return label
     }()
     
