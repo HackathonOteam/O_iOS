@@ -21,6 +21,10 @@
 		0936A4062A3471D5006A027B /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 0936A4052A3471D5006A027B /* Then */; };
 		0936A4092A34846E006A027B /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 0936A4082A34846E006A027B /* DGCharts */; };
 		0936A40B2A348987006A027B /* MonthCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936A40A2A348987006A027B /* MonthCalendarViewController.swift */; };
+		DB24484B2A348FA2000C43AE /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24484A2A348FA2000C43AE /* UIFont+.swift */; };
+		DB24484F2A348FE1000C43AE /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB24484C2A348FE1000C43AE /* Pretendard-Bold.otf */; };
+		DB2448502A348FE1000C43AE /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB24484D2A348FE1000C43AE /* Pretendard-Regular.otf */; };
+		DB2448512A348FE1000C43AE /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB24484E2A348FE1000C43AE /* Pretendard-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,10 @@
 		0936A3FA2A345079006A027B /* TempModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempModel.swift; sourceTree = "<group>"; };
 		0936A3FC2A345094006A027B /* TempTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempTableViewCell.swift; sourceTree = "<group>"; };
 		0936A40A2A348987006A027B /* MonthCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCalendarViewController.swift; sourceTree = "<group>"; };
+		DB24484A2A348FA2000C43AE /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		DB24484C2A348FE1000C43AE /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		DB24484D2A348FE1000C43AE /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		DB24484E2A348FE1000C43AE /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,13 +80,14 @@
 		0936A3D82A344EC9006A027B /* O_Team */ = {
 			isa = PBXGroup;
 			children = (
+				DB2448482A348F77000C43AE /* Utils */,
+				DB2448472A348F4F000C43AE /* Resource */,
 				0936A3F72A34503E006A027B /* Controllers */,
 				0936A3F62A345039006A027B /* Views */,
 				0936A3F52A345033006A027B /* Models */,
 				0936A3D92A344EC9006A027B /* AppDelegate.swift */,
 				0936A3DB2A344EC9006A027B /* SceneDelegate.swift */,
 				0936A3DD2A344EC9006A027B /* ViewController.swift */,
-				0936A3E22A344ECB006A027B /* Assets.xcassets */,
 				0936A3E42A344ECB006A027B /* LaunchScreen.storyboard */,
 				0936A3E72A344ECB006A027B /* Info.plist */,
 			);
@@ -108,6 +117,33 @@
 				0936A40A2A348987006A027B /* MonthCalendarViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DB2448472A348F4F000C43AE /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				DB24484C2A348FE1000C43AE /* Pretendard-Bold.otf */,
+				DB24484E2A348FE1000C43AE /* Pretendard-Medium.otf */,
+				DB24484D2A348FE1000C43AE /* Pretendard-Regular.otf */,
+				0936A3E22A344ECB006A027B /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		DB2448482A348F77000C43AE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DB2448492A348F80000C43AE /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DB2448492A348F80000C43AE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DB24484A2A348FA2000C43AE /* UIFont+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +219,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0936A3E62A344ECB006A027B /* LaunchScreen.storyboard in Resources */,
+				DB2448512A348FE1000C43AE /* Pretendard-Medium.otf in Resources */,
+				DB2448502A348FE1000C43AE /* Pretendard-Regular.otf in Resources */,
+				DB24484F2A348FE1000C43AE /* Pretendard-Bold.otf in Resources */,
 				0936A3E32A344ECB006A027B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB24484B2A348FA2000C43AE /* UIFont+.swift in Sources */,
 				0936A40B2A348987006A027B /* MonthCalendarViewController.swift in Sources */,
 				0936A3F92A345066006A027B /* TempViewController.swift in Sources */,
 				0936A3FD2A345094006A027B /* TempTableViewCell.swift in Sources */,
