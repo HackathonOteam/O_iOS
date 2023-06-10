@@ -22,6 +22,7 @@
 		0936A4092A34846E006A027B /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 0936A4082A34846E006A027B /* DGCharts */; };
 		0936A40B2A348987006A027B /* MonthCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936A40A2A348987006A027B /* MonthCalendarViewController.swift */; };
 		0936A40D2A34A14C006A027B /* EmotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936A40C2A34A14C006A027B /* EmotionCollectionViewCell.swift */; };
+		0936A4182A351F43006A027B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936A4172A351F42006A027B /* UserService.swift */; };
 		DB24484B2A348FA2000C43AE /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24484A2A348FA2000C43AE /* UIFont+.swift */; };
 		DB24484F2A348FE1000C43AE /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB24484C2A348FE1000C43AE /* Pretendard-Bold.otf */; };
 		DB2448502A348FE1000C43AE /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB24484D2A348FE1000C43AE /* Pretendard-Regular.otf */; };
@@ -44,6 +45,7 @@
 		0936A3FC2A345094006A027B /* TempTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempTableViewCell.swift; sourceTree = "<group>"; };
 		0936A40A2A348987006A027B /* MonthCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCalendarViewController.swift; sourceTree = "<group>"; };
 		0936A40C2A34A14C006A027B /* EmotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCollectionViewCell.swift; sourceTree = "<group>"; };
+		0936A4172A351F42006A027B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		DB24484A2A348FA2000C43AE /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		DB24484C2A348FE1000C43AE /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		DB24484D2A348FE1000C43AE /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		0936A3D82A344EC9006A027B /* O_Team */ = {
 			isa = PBXGroup;
 			children = (
+				0936A4162A351F36006A027B /* Service */,
 				DB2448482A348F77000C43AE /* Utils */,
 				DB2448472A348F4F000C43AE /* Resource */,
 				0936A3F72A34503E006A027B /* Controllers */,
@@ -128,6 +131,14 @@
 				DB2448542A349240000C43AE /* HomeViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0936A4162A351F36006A027B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0936A4172A351F42006A027B /* UserService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		DB2448472A348F4F000C43AE /* Resource */ = {
@@ -251,6 +262,7 @@
 				0936A3FD2A345094006A027B /* TempTableViewCell.swift in Sources */,
 				0936A40D2A34A14C006A027B /* EmotionCollectionViewCell.swift in Sources */,
 				0936A3FB2A345079006A027B /* TempModel.swift in Sources */,
+				0936A4182A351F43006A027B /* UserService.swift in Sources */,
 				DB2448552A349240000C43AE /* HomeViewController.swift in Sources */,
 				0936A3DE2A344EC9006A027B /* ViewController.swift in Sources */,
 				DB2448572A349C6F000C43AE /* MemoryCardCell.swift in Sources */,
