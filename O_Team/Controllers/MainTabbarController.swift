@@ -9,7 +9,6 @@ import UIKit
 
 final class MainTabbarController: UITabBarController {
     //MARK: - Properties
-    
     private let createDiary = UIButton(type: .system).then {
         $0.setImage(UIImage(named: "Plus"), for: .normal)
         $0.backgroundColor = .activeBlueColor
@@ -26,5 +25,15 @@ final class MainTabbarController: UITabBarController {
             $0.centerY.equalTo(self.tabBar.snp.top)
             $0.width.height.equalTo(61)
         }
+        
+        self.createDiary.addTarget(self, action: #selector(clickCreateDiaryButton), for: .touchUpInside)
+    }
+    
+    //MARK: - Selctor
+    @objc private func clickCreateDiaryButton() {
+        let recordVC = UINavigationController(rootViewController: RecordViewController(isPresentType: true))
+        recordVC.modalPresentationStyle = .fullScreen
+        
+        self.present(recordVC, animated: true)
     }
 }
