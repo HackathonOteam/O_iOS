@@ -16,7 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = MonthCalendarViewController()
+        let tabbar = UITabBarController()
+        tabbar.viewControllers = [UINavigationController(rootViewController: HomeViewController())]
+        window?.rootViewController = tabbar
         window?.makeKeyAndVisible()
     }
 
@@ -47,7 +49,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
 
