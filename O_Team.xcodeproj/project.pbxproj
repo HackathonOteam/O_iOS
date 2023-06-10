@@ -24,7 +24,6 @@
 		0936A40D2A34A14C006A027B /* EmotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936A40C2A34A14C006A027B /* EmotionCollectionViewCell.swift */; };
 		0936A4182A351F43006A027B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936A4172A351F42006A027B /* UserService.swift */; };
 		887030AB2A34F0B90086F7E3 /* Gifu in Frameworks */ = {isa = PBXBuildFile; productRef = 887030AA2A34F0B90086F7E3 /* Gifu */; };
-		887030AD2A34F34D0086F7E3 /* sample.gif in Resources */ = {isa = PBXBuildFile; fileRef = 887030AC2A34F34D0086F7E3 /* sample.gif */; };
 		88ECD9F82A34D32400556142 /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ECD9F72A34D32400556142 /* RegistViewController.swift */; };
 		DB24484B2A348FA2000C43AE /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24484A2A348FA2000C43AE /* UIFont+.swift */; };
 		DB24484F2A348FE1000C43AE /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB24484C2A348FE1000C43AE /* Pretendard-Bold.otf */; };
@@ -54,7 +53,6 @@
 		0936A40A2A348987006A027B /* MonthCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCalendarViewController.swift; sourceTree = "<group>"; };
 		0936A40C2A34A14C006A027B /* EmotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCollectionViewCell.swift; sourceTree = "<group>"; };
 		0936A4172A351F42006A027B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		887030AC2A34F34D0086F7E3 /* sample.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = sample.gif; path = ../../../sample.gif; sourceTree = "<group>"; };
 		88ECD9F72A34D32400556142 /* RegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
 		DB24484A2A348FA2000C43AE /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		DB24484C2A348FE1000C43AE /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 		DB2448472A348F4F000C43AE /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				887030AC2A34F34D0086F7E3 /* sample.gif */,
 				DB24484C2A348FE1000C43AE /* Pretendard-Bold.otf */,
 				DB24484E2A348FE1000C43AE /* Pretendard-Medium.otf */,
 				DB24484D2A348FE1000C43AE /* Pretendard-Regular.otf */,
@@ -199,11 +196,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0936A3EA2A344ECB006A027B /* Build configuration list for PBXNativeTarget "O_Team" */;
 			buildPhases = (
-				407734A521AC9B47481293C1 /* [CP] Check Pods Manifest.lock */,
 				0936A3D22A344EC9006A027B /* Sources */,
 				0936A3D32A344EC9006A027B /* Frameworks */,
 				0936A3D42A344EC9006A027B /* Resources */,
-				3D6F81FB8A669DF78ADD4C16 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,54 +267,11 @@
 				DB2448512A348FE1000C43AE /* Pretendard-Medium.otf in Resources */,
 				DB2448502A348FE1000C43AE /* Pretendard-Regular.otf in Resources */,
 				DB24484F2A348FE1000C43AE /* Pretendard-Bold.otf in Resources */,
-				887030AD2A34F34D0086F7E3 /* sample.gif in Resources */,
 				0936A3E32A344ECB006A027B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		3D6F81FB8A669DF78ADD4C16 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-O_Team/Pods-O_Team-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-O_Team/Pods-O_Team-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-O_Team/Pods-O_Team-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		407734A521AC9B47481293C1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-O_Team-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0936A3D22A344EC9006A027B /* Sources */ = {

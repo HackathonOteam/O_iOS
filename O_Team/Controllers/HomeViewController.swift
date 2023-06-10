@@ -43,12 +43,20 @@ final class HomeViewController: UIViewController {
         self.addSubView()
         self.layout()
         self.configureVC()
+        if UserDefaults.standard.string(forKey: "key") != nil {
+            
+        } else {
+            let vc = RegistViewController()
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
+
         
         self.memoryCardCollectionView.delegate = self
         self.memoryCardCollectionView.dataSource = self
         self.tabBarController?.delegate = self
     }
-    
+
     //MARK: - Configure
     private func configureVC() {
         self.view.backgroundColor = .white

@@ -17,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
       
+        let rgisterVC = RegistViewController()
         let tabbar = MainTabbarController()
         let homeVC = UINavigationController(rootViewController: HomeViewController())
         homeVC.tabBarItem.image = UIImage(named: "HomeOff")?.withRenderingMode(.alwaysOriginal)
