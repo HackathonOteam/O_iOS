@@ -25,6 +25,7 @@
 		0936A4182A351F43006A027B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936A4172A351F42006A027B /* UserService.swift */; };
 		887030AB2A34F0B90086F7E3 /* Gifu in Frameworks */ = {isa = PBXBuildFile; productRef = 887030AA2A34F0B90086F7E3 /* Gifu */; };
 		88ECD9F82A34D32400556142 /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ECD9F72A34D32400556142 /* RegistViewController.swift */; };
+		DB162C7D2A3530900052534D /* EmotionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB162C7C2A3530900052534D /* EmotionType.swift */; };
 		DB24484B2A348FA2000C43AE /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24484A2A348FA2000C43AE /* UIFont+.swift */; };
 		DB24484F2A348FE1000C43AE /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB24484C2A348FE1000C43AE /* Pretendard-Bold.otf */; };
 		DB2448502A348FE1000C43AE /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB24484D2A348FE1000C43AE /* Pretendard-Regular.otf */; };
@@ -54,6 +55,7 @@
 		0936A40C2A34A14C006A027B /* EmotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCollectionViewCell.swift; sourceTree = "<group>"; };
 		0936A4172A351F42006A027B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		88ECD9F72A34D32400556142 /* RegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
+		DB162C7C2A3530900052534D /* EmotionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionType.swift; sourceTree = "<group>"; };
 		DB24484A2A348FA2000C43AE /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		DB24484C2A348FE1000C43AE /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		DB24484D2A348FE1000C43AE /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				0936A3FA2A345079006A027B /* TempModel.swift */,
+				DB162C7C2A3530900052534D /* EmotionType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				0936A40B2A348987006A027B /* MonthCalendarViewController.swift in Sources */,
 				DB58FF282A34E2E200D8ABE4 /* RecordViewController.swift in Sources */,
 				DB58FF2A2A34E7AD00D8ABE4 /* RecordCell.swift in Sources */,
+				DB162C7D2A3530900052534D /* EmotionType.swift in Sources */,
 				DB58FF242A34D55700D8ABE4 /* MainTabbarController.swift in Sources */,
 				0936A3F92A345066006A027B /* TempViewController.swift in Sources */,
 				0936A3FD2A345094006A027B /* TempTableViewCell.swift in Sources */,
