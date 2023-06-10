@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let dummyVC = UIViewController()
         dummyVC.view.tag = 400
     
-        let calendarVC = UIViewController()
+        let calendarVC = UINavigationController(rootViewController: MonthCalendarViewController())
         calendarVC.tabBarItem.image = UIImage(named: "calendarOff")?.withRenderingMode(.alwaysOriginal)
         calendarVC.tabBarItem.selectedImage = UIImage(named: "calendarOn")?.withRenderingMode(.alwaysOriginal)
         calendarVC.tabBarItem.title = "이번 달 감정"
