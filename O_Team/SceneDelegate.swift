@@ -16,7 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = MonthCalendarViewController()
+        let rootViewController = MonthCalendarViewController()
+        let navigaitoncontroller = UINavigationController(rootViewController: rootViewController)
+        
+        window?.rootViewController = navigaitoncontroller
+
         window?.makeKeyAndVisible()
     }
 

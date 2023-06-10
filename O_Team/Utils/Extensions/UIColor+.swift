@@ -20,6 +20,7 @@ extension UIColor {
     // MARK: 메인 테마 색 또는 자주 쓰는 색을 정의
     class var mainColor: UIColor { UIColor(named: "MainColor") ?? UIColor() }
     class var BackGroundColor: UIColor { UIColor(named: "BackGroundColor") ?? UIColor() }
-    
+    class var DeepPurple: UIColor { UIColor(named: "DeepPurple") ?? UIColor() }
+
 }
 
