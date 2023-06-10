@@ -46,6 +46,7 @@ final class HomeViewController: UIViewController {
         
         self.memoryCardCollectionView.delegate = self
         self.memoryCardCollectionView.dataSource = self
+        self.tabBarController?.delegate = self
     }
     
     //MARK: - Configure
@@ -54,6 +55,10 @@ final class HomeViewController: UIViewController {
         self.title = "도담"
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white,
                                                                         .font : UIFont.pretendard(.bold, size: 16)]
+        let text = self.titleLabel.text ?? ""
+        let name = "똴랄라뚤랄라" + "님,"
+        let attributedStr = NSMutableAttributedString(string: text)
+        attributedStr.addAttribute(.font, value: UIFont.pretendard(.bold, size: 20), range: (text as NSString).range(of: name))
     }
     
     //MARK: - addSubView
@@ -133,5 +138,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
     
         targetContentOffset.pointee = CGPoint(x: CGFloat(index) * cellWidthIncludingSpacing, y: 0)
+    }
+}
+
+extension HomeViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        return viewController.view.tag == 400 ? false : true
     }
 }

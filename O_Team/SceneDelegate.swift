@@ -16,9 +16,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-
-        let tabbar = UITabBarController()
-        tabbar.viewControllers = [UINavigationController(rootViewController: HomeViewController())]
+      
+        let tabbar = MainTabbarController()
+        let homeVC = UINavigationController(rootViewController: HomeViewController())
+        homeVC.tabBarItem.image = UIImage(named: "HomeOff")?.withRenderingMode(.alwaysOriginal)
+        homeVC.tabBarItem.selectedImage = UIImage(named: "HomeOn")?.withRenderingMode(.alwaysOriginal)
+        homeVC.tabBarItem.title = "홈"
+        
+        let dummyVC = UIViewController()
+        dummyVC.view.tag = 400
+    
+        let calendarVC = UINavigationController(rootViewController: MonthCalendarViewController())
+        calendarVC.tabBarItem.image = UIImage(named: "calendarOff")?.withRenderingMode(.alwaysOriginal)
+        calendarVC.tabBarItem.selectedImage = UIImage(named: "calendarOn")?.withRenderingMode(.alwaysOriginal)
+        calendarVC.tabBarItem.title = "이번 달 감정"
+        
+        tabbar.viewControllers = [homeVC, dummyVC, calendarVC]
+        tabbar.tabBar.tintColor = .activeBlueColor
+        tabbar.tabBar.unselectedItemTintColor = .subGrayColor
+      
         window?.rootViewController = tabbar
         window?.makeKeyAndVisible()
     }
