@@ -25,6 +25,7 @@
 		DB24484F2A348FE1000C43AE /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB24484C2A348FE1000C43AE /* Pretendard-Bold.otf */; };
 		DB2448502A348FE1000C43AE /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB24484D2A348FE1000C43AE /* Pretendard-Regular.otf */; };
 		DB2448512A348FE1000C43AE /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB24484E2A348FE1000C43AE /* Pretendard-Medium.otf */; };
+		DB2448532A349099000C43AE /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2448522A349099000C43AE /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		DB24484C2A348FE1000C43AE /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		DB24484D2A348FE1000C43AE /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		DB24484E2A348FE1000C43AE /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		DB2448522A349099000C43AE /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				DB24484A2A348FA2000C43AE /* UIFont+.swift */,
+				DB2448522A349099000C43AE /* UIColor+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				0936A3DE2A344EC9006A027B /* ViewController.swift in Sources */,
 				0936A3DA2A344EC9006A027B /* AppDelegate.swift in Sources */,
 				0936A3DC2A344EC9006A027B /* SceneDelegate.swift in Sources */,
+				DB2448532A349099000C43AE /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
