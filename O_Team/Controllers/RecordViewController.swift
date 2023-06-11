@@ -11,7 +11,7 @@ import Speech
 final class RecordViewController: UIViewController {
     //MARK: - Properties
     private let isPresentType: Bool
-    private var dataArray: [String] = ["오늘 일어났던 일들 중에서 기억에 가장 많이 남는 일은 어떤 것인가요?","오늘 일어났던 일들 중에서 기억에 가장 많이 남는 일은 어떤 것인가요?","오늘 일어났던 일들 중에서 기억에 가장 많이 남는 일은 어떤 것인가요?"]
+    private var dataArray: [RecoringModel] = []
     
     private let speechRecognizer = SFSpeechRecognizer(locale: .init(identifier: "ko-KR")) // 한국말 Recognizer 생성
     
@@ -49,6 +49,19 @@ final class RecordViewController: UIViewController {
         let item = UIBarButtonItem(title: "기록 완료", style: .done, target: self, action: #selector(self.didClickDoneButton))
         item.tintColor = UIColor(red: 255/255, green: 127/255, blue: 127/255, alpha: 1)
         self.navigationItem.rightBarButtonItem = item
+        ListService.getList() { arr in
+            let model = RecoringModel()
+            model.answer = nil
+            model.question = "오늘 일어났던 일들 중에서 기억에 가장 많이 남는 일은 어떤 것인가요?"
+            self.dataArray.append(model)
+            arr.forEach {
+                let model = RecoringModel()
+                model.answer = $0.contents
+                model.question = $0.answer
+                self.dataArray.append(model)
+                self.contentTableView.reloadData()
+            }
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -67,6 +80,9 @@ final class RecordViewController: UIViewController {
         self.contentTableView.dataSource = self
         self.speechRecognizer?.delegate = self
         
+        self.navigationItem.backButtonTitle = ""
+        self.navigationController?.navigationBar.tintColor = .subGrayColor
+        
         self.recordButton.addTarget(self, action: #selector(didClickRecordButton), for: .touchUpInside)
     }
     
@@ -75,7 +91,8 @@ final class RecordViewController: UIViewController {
     }
     
     @objc private func didClickDoneButton() {
-        print("didClickDoneButton")
+        let summaryVC = SummaryViewController()
+        self.navigationController?.pushViewController(summaryVC, animated: true)
     }
     
     @objc private func didClickRecordButton() {
@@ -87,7 +104,6 @@ final class RecordViewController: UIViewController {
         }else { //현재 음성인식이 수행중이지 않으면
             self.startRecoding() // 음성인식 시작)
             self.recordButton.setImage(UIImage(named: "pause"), for: .normal)
-            
         }
     }
     
@@ -134,9 +150,19 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RecordCell.identifier, for: indexPath) as! RecordCell
         cell.prepareForReuse()
+        cell.answerLabel.text = self.dataArray[indexPath.row].answer
+        cell.questionLabel.text = self.dataArray[indexPath.row].question
         
         if indexPath.row == self.dataArray.count-1 {
             cell.questionLabel.font = .pretendard(.bold, size: 28)
@@ -202,8 +228,14 @@ extension RecordViewController: SFSpeechRecognizerDelegate {
                 self.recognitionRequest = nil
                 self.recognitionTask = nil
                 let text = result.bestTranscription.formattedString
-                self.dataArray.append(text)
-                self.contentTableView.reloadData()
+                DiaryService.createRecord(text) { res in
+                    let model = RecoringModel()
+                    model.question = res.answer
+                    model.answer = text
+                    self.dataArray.append(model)
+                    
+                    self.contentTableView.reloadData()
+                }
             }
         })
         

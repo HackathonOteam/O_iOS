@@ -5,7 +5,7 @@
 //  Created by SangWoo's MacBook on 2023/06/11.
 //
 
-import Foundation
+import UIKit
 
 enum EmotionType: String {
     case AngryEmotion = "화나요"
@@ -29,6 +29,20 @@ enum EmotionType: String {
         case .SadEmotion: return "힘든 일이 많았어요"
         case .SickEmotion: return "많이 아팠어요"
         case .HappyEmotion: return "많이 웃으셨네요!"
+        }
+    }
+    
+    var image: UIImage {
+        switch self {
+        case .BadEmotion: return UIImage(named: "BadEmotion") ?? UIImage()
+        case .AngryEmotion: return UIImage(named: "AngryEmotion") ?? UIImage()
+        case .BoringEmotion: return UIImage(named: "BoringEmotion") ?? UIImage()
+        case .FineEmotion: return UIImage(named: "FineEmotion") ?? UIImage()
+        case .SuprisedEmotion: return UIImage(named: "SuprisedEmotion") ?? UIImage()
+        case .ExcitedEmotion: return UIImage(named: "ExcitedEmotion") ?? UIImage()
+        case .SadEmotion: return UIImage(named: "SadEmotion") ?? UIImage()
+        case .SickEmotion: return UIImage(named: "SickEmotion") ?? UIImage()
+        case .HappyEmotion: return UIImage(named: "HappyEmotion") ?? UIImage()
         }
     }
 }

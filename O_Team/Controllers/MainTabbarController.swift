@@ -34,6 +34,6 @@ final class MainTabbarController: UITabBarController {
         let recordVC = UINavigationController(rootViewController: RecordViewController(isPresentType: true))
         recordVC.modalPresentationStyle = .fullScreen
         
-        self.present(recordVC, animated: true)
+        self.present(recordVC, animated: true, completion: { DiaryService.createDiary() })
     }
 }
