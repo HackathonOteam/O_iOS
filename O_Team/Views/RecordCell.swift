@@ -23,6 +23,7 @@ final class RecordCell: UITableViewCell {
         $0.alpha = 0.5
         $0.textColor = .activeBlueColor
         $0.text = "답변이야."
+        $0.numberOfLines = 0
         $0.layer.cornerRadius = 8
         $0.backgroundColor = .white
     }
@@ -37,13 +38,13 @@ final class RecordCell: UITableViewCell {
         
         self.questionLabel.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(24)
-            $0.top.equalToSuperview()
+            $0.top.equalTo(self.answerLabel.snp.bottom).offset(60)
+            $0.bottom.equalToSuperview().offset(-24)
         }
         
         self.answerLabel.snp.makeConstraints {
             $0.trailing.equalToSuperview().offset(-24)
-            $0.top.equalTo(self.questionLabel.snp.bottom).offset(24)
-            $0.bottom.equalToSuperview().offset(-60)
+            $0.top.equalToSuperview()
         }
     }
     

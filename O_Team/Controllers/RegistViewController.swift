@@ -33,7 +33,7 @@ class RegistViewController: UIViewController {
         label.font = UIFont.boldSystemFont(ofSize: 25)
         view.addSubview(label)
         
-        //gifImageView.contentMode = .scaleAspectFit
+        gifImageView.contentMode = .scaleAspectFit
         view.addSubview(gifImageView)
         
         
