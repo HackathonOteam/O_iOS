@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0924A6872A352F0B00AACE10 /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0924A6862A352F0B00AACE10 /* CalendarService.swift */; };
+		0924A6892A35517000AACE10 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0924A6882A35517000AACE10 /* UserInfo.swift */; };
 		0936A3DA2A344EC9006A027B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936A3D92A344EC9006A027B /* AppDelegate.swift */; };
 		0936A3DC2A344EC9006A027B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936A3DB2A344EC9006A027B /* SceneDelegate.swift */; };
 		0936A3DE2A344EC9006A027B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936A3DD2A344EC9006A027B /* ViewController.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0924A6862A352F0B00AACE10 /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
+		0924A6882A35517000AACE10 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		0936A3D62A344EC9006A027B /* O_Team.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = O_Team.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0936A3D92A344EC9006A027B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0936A3DB2A344EC9006A027B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				0936A4172A351F42006A027B /* UserService.swift */,
+				0924A6862A352F0B00AACE10 /* CalendarService.swift */,
+				0924A6882A35517000AACE10 /* UserInfo.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -281,6 +287,7 @@
 				DB58FF262A34E20E00D8ABE4 /* NotificationName+.swift in Sources */,
 				DB24484B2A348FA2000C43AE /* UIFont+.swift in Sources */,
 				0936A40B2A348987006A027B /* MonthCalendarViewController.swift in Sources */,
+				0924A6872A352F0B00AACE10 /* CalendarService.swift in Sources */,
 				DB58FF282A34E2E200D8ABE4 /* RecordViewController.swift in Sources */,
 				DB58FF2A2A34E7AD00D8ABE4 /* RecordCell.swift in Sources */,
 				DB58FF242A34D55700D8ABE4 /* MainTabbarController.swift in Sources */,
@@ -296,6 +303,7 @@
 				DB2448572A349C6F000C43AE /* MemoryCardCell.swift in Sources */,
 				0936A3DA2A344EC9006A027B /* AppDelegate.swift in Sources */,
 				0936A3DC2A344EC9006A027B /* SceneDelegate.swift in Sources */,
+				0924A6892A35517000AACE10 /* UserInfo.swift in Sources */,
 				DB2448532A349099000C43AE /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,7 +443,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JA7UDVTQBU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = O_Team/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -462,7 +470,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JA7UDVTQBU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = O_Team/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
