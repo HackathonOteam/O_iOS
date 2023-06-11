@@ -10,13 +10,16 @@ import SnapKit
 import Then
 
 final class HomeViewController: UIViewController {
+    let api = CalendarService()
+    var diaryData:[Diary] = []
+    let userinfo = UserInfo.shared
     //MARK: - Properties
     private let topBackgroundView = UIView().then {
         $0.backgroundColor = .subLighten
     }
     
     private let titleLabel = UILabel().then {
-        $0.text = UserDefaults.standard.string(forKey: "key")
+        $0.text = UserDefaults.standard.string(forKey: "key")! + "님" + "\n기억해야할 것들을 알려드릴게요"
         $0.font = .pretendard(.medium, size: 20)
         $0.textColor = .white
         $0.numberOfLines = 0
@@ -38,6 +41,26 @@ final class HomeViewController: UIViewController {
     }
     
     //MARK: - LifeCycle
+    override func viewWillAppear(_ animated: Bool) {
+        print("tttt")
+        self.api.getHomeVideoList(userName: "타래", today: "2023-06-11") { DiaryResoponse in
+            print("xxxxxxxxxxxxxx")
+            print(DiaryResoponse)
+            if self.userinfo.Join == 0{
+                guard let res = DiaryResoponse else {return}
+                self.diaryData.append(res.anniversaryDiary)
+                self.diaryData.append(res.positiveDiary)
+                self.diaryData.append(res.yearAgoDiary)
+                print(self.diaryData.count)
+                print("가자자")
+                self.memoryCardCollectionView.reloadData()
+                self.userinfo.Join += 1
+            }else{
+                
+            }
+
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addSubView()
@@ -114,12 +137,39 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return diaryData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MemoryCardCell.identifier, for: indexPath) as! MemoryCardCell
         
+        let dateString = diaryData[indexPath.row].date
+
+        if indexPath.row == 0{
+            cell.titleLabel.text = "좋았던 기억을 떠올려보세요"
+        }
+        else if indexPath.row == 1{
+            cell.titleLabel.text = "1년전 오늘"
+
+        }
+        else{
+            cell.titleLabel.text = "누군가의 기념일에 대한 기록!"
+
+        }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        if let date = dateFormatter.date(from: dateString) {
+            dateFormatter.dateFormat = "yyyy년MM월 dd일"
+            let formattedDate = dateFormatter.string(from: date)
+            print(formattedDate) // 출력: "06월 11일"
+            cell.dateLabel.text = formattedDate
+            cell.imotionImageView.image = UIImage(named: diaryData[indexPath.row].emotion)
+            cell.contentLabel.text = diaryData[indexPath.row].contents
+            
+        } else {
+            print("날짜 변환 실패")
+        }
         return cell
     }
     
