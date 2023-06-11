@@ -18,13 +18,25 @@ class MonthCalendarViewController: UIViewController {
     var userNickname: UILabel!
     var welcomeComment: UILabel!
     var pieChartView: PieChartView!
-
+    let api = CalendarService()
+    var count:Int = 0
+    var month:DiaryMonthlyResponse = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setConfigure()
         setCollectionView()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+
+    self.api.getMonthEmotion(yearMonth: "2023-06", userName: "타래") { DiaryMonthResponse in
+        print(DiaryMonthResponse?.count)
+        self.count = Int(DiaryMonthResponse?.count ?? 0)
+        self.collectionview.reloadData()
+        self.month = DiaryMonthResponse!
+        
+    }
+    }
     func setCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical // 세로 스크롤 방향 설정
@@ -56,7 +68,6 @@ class MonthCalendarViewController: UIViewController {
         self.view.backgroundColor = .BackGroundColor
         self.navigationItem.title = "이번달감정"
         // 스크롤 뷰 생성
-        scrollView.showsVerticalScrollIndicator = false
         scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = true
         view.addSubview(scrollView)
@@ -71,7 +82,7 @@ class MonthCalendarViewController: UIViewController {
         contentView.snp.makeConstraints { make in
             make.edges.equalToSuperview().offset(0)
             make.width.equalToSuperview().offset(0)// 컨텐트 뷰의 너비를 스크롤 뷰와 같게 설정
-            make.height.equalTo(1104) // 컨텐트 뷰의 높이를 네비게이션바 아래부터 1104로 설정
+            make.height.equalTo(950) // 컨텐트 뷰의 높이를 네비게이션바 아래부터 1104로 설정
         }
         
         calendarView = UIView()
@@ -265,11 +276,25 @@ class MonthCalendarViewController: UIViewController {
 }
 extension MonthCalendarViewController: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 14
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = self.collectionview.dequeueReusableCell(withReuseIdentifier: "EmotionCollectionViewCell", for: indexPath) as? EmotionCollectionViewCell else {return UICollectionViewCell()}
+        cell.imageView.image = UIImage(named: month[indexPath.row].emotion)
+        let dateString = month[indexPath.row].date
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        if let date = dateFormatter.date(from: dateString) {
+            dateFormatter.dateFormat = "MM월 dd일"
+            let formattedDate = dateFormatter.string(from: date)
+            print(formattedDate) // 출력: "06월 11일"
+            cell.label.text = formattedDate
+
+        } else {
+            print("날짜 변환 실패")
+        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

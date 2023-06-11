@@ -11,30 +11,30 @@ final class MemoryCardCell: UICollectionViewCell {
     static let identifier = "MemoryCardCell"
     
     //MARK: - Properties
-    private let titleLabel = UILabel().then {
+    public let titleLabel = UILabel().then {
         $0.font = .pretendard(.bold, size: 24)
         $0.textColor = .mainTextColor
         $0.text = "제목"
     }
     
-    private let imotionImageView = UIImageView().then {
+    public let imotionImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
         $0.image = UIImage(named: "HappyEmotion")?.withRenderingMode(.alwaysOriginal)
     }
     
-    private let dateLabel = UILabel().then {
+    public let dateLabel = UILabel().then {
         $0.font = .pretendard(.bold, size: 14)
         $0.textColor = .mainTextColor
         $0.text = "날짜"
     }
     
-    private let contentLabel = UILabel().then {
+    public let contentLabel = UILabel().then {
         $0.text = "임시 내용"
         $0.textColor = .subGrayColor
         $0.font = .pretendard(.regular, size: 14)
     }
     
-    private let moreButton = UIButton().then {
+    public let moreButton = UIButton().then {
         $0.backgroundColor = .activeBlueColor
         $0.setTitle("더보기", for: .normal)
         $0.setTitleColor(.white, for: .normal)
