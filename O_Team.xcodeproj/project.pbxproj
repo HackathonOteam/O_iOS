@@ -34,15 +34,15 @@
 		887030AB2A34F0B90086F7E3 /* Gifu in Frameworks */ = {isa = PBXBuildFile; productRef = 887030AA2A34F0B90086F7E3 /* Gifu */; };
 		88ECD9F82A34D32400556142 /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ECD9F72A34D32400556142 /* RegistViewController.swift */; };
 		DB162C7D2A3530900052534D /* EmotionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB162C7C2A3530900052534D /* EmotionType.swift */; };
-		DB24484B2A348FA2000C43AE /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24484A2A348FA2000C43AE /* UIFont+.swift */; };
+		DB24484B2A348FA2000C43AE /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24484A2A348FA2000C43AE /* UIFont.swift */; };
 		DB24484F2A348FE1000C43AE /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB24484C2A348FE1000C43AE /* Pretendard-Bold.otf */; };
 		DB2448502A348FE1000C43AE /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB24484D2A348FE1000C43AE /* Pretendard-Regular.otf */; };
 		DB2448512A348FE1000C43AE /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB24484E2A348FE1000C43AE /* Pretendard-Medium.otf */; };
-		DB2448532A349099000C43AE /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2448522A349099000C43AE /* UIColor+.swift */; };
+		DB2448532A349099000C43AE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2448522A349099000C43AE /* UIColor.swift */; };
 		DB2448552A349240000C43AE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2448542A349240000C43AE /* HomeViewController.swift */; };
 		DB2448572A349C6F000C43AE /* MemoryCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2448562A349C6F000C43AE /* MemoryCardCell.swift */; };
 		DB58FF242A34D55700D8ABE4 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB58FF232A34D55700D8ABE4 /* MainTabbarController.swift */; };
-		DB58FF262A34E20E00D8ABE4 /* NotificationName+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB58FF252A34E20E00D8ABE4 /* NotificationName+.swift */; };
+		DB58FF262A34E20E00D8ABE4 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB58FF252A34E20E00D8ABE4 /* NotificationName.swift */; };
 		DB58FF282A34E2E200D8ABE4 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB58FF272A34E2E200D8ABE4 /* RecordViewController.swift */; };
 		DB58FF2A2A34E7AD00D8ABE4 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB58FF292A34E7AD00D8ABE4 /* RecordCell.swift */; };
 		DB58FF2C2A34E99D00D8ABE4 /* ChatLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB58FF2B2A34E99D00D8ABE4 /* ChatLabel.swift */; };
@@ -72,15 +72,15 @@
 		885C7BFC2A353DB000FC7E15 /* ListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListService.swift; sourceTree = "<group>"; };
 		88ECD9F72A34D32400556142 /* RegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
 		DB162C7C2A3530900052534D /* EmotionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionType.swift; sourceTree = "<group>"; };
-		DB24484A2A348FA2000C43AE /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		DB24484A2A348FA2000C43AE /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		DB24484C2A348FE1000C43AE /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		DB24484D2A348FE1000C43AE /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		DB24484E2A348FE1000C43AE /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
-		DB2448522A349099000C43AE /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		DB2448522A349099000C43AE /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		DB2448542A349240000C43AE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DB2448562A349C6F000C43AE /* MemoryCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCardCell.swift; sourceTree = "<group>"; };
 		DB58FF232A34D55700D8ABE4 /* MainTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
-		DB58FF252A34E20E00D8ABE4 /* NotificationName+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+.swift"; sourceTree = "<group>"; };
+		DB58FF252A34E20E00D8ABE4 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		DB58FF272A34E2E200D8ABE4 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		DB58FF292A34E7AD00D8ABE4 /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 		DB58FF2B2A34E99D00D8ABE4 /* ChatLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLabel.swift; sourceTree = "<group>"; };
@@ -122,32 +122,24 @@
 		0936A3D82A344EC9006A027B /* O_Team */ = {
 			isa = PBXGroup;
 			children = (
-				0936A4162A351F36006A027B /* Service */,
-				DB2448482A348F77000C43AE /* Utils */,
+				887FE14F2A37566D00456901 /* Source */,
 				DB2448472A348F4F000C43AE /* Resource */,
-				0936A3F72A34503E006A027B /* Controllers */,
-				0936A3F62A345039006A027B /* Views */,
-				0936A3F52A345033006A027B /* Models */,
-				0936A3D92A344EC9006A027B /* AppDelegate.swift */,
-				0936A3DB2A344EC9006A027B /* SceneDelegate.swift */,
-				0936A3DD2A344EC9006A027B /* ViewController.swift */,
-				0936A3E42A344ECB006A027B /* LaunchScreen.storyboard */,
 				0936A3E72A344ECB006A027B /* Info.plist */,
 			);
 			path = O_Team;
 			sourceTree = "<group>";
 		};
-		0936A3F52A345033006A027B /* Models */ = {
+		0936A3F52A345033006A027B /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				0936A3FA2A345079006A027B /* TempModel.swift */,
 				DB162C7C2A3530900052534D /* EmotionType.swift */,
 				885C7BFA2A353CA300FC7E15 /* RecoringModel.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		0936A3F62A345039006A027B /* Views */ = {
+		0936A3F62A345039006A027B /* View */ = {
 			isa = PBXGroup;
 			children = (
 				0936A3FC2A345094006A027B /* TempTableViewCell.swift */,
@@ -156,12 +148,15 @@
 				DB58FF292A34E7AD00D8ABE4 /* RecordCell.swift */,
 				DB58FF2B2A34E99D00D8ABE4 /* ChatLabel.swift */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
-		0936A3F72A34503E006A027B /* Controllers */ = {
+		0936A3F72A34503E006A027B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0936A3D92A344EC9006A027B /* AppDelegate.swift */,
+				0936A3DB2A344EC9006A027B /* SceneDelegate.swift */,
+				0936A3DD2A344EC9006A027B /* ViewController.swift */,
 				0936A3F82A345066006A027B /* TempViewController.swift */,
 				0936A40A2A348987006A027B /* MonthCalendarViewController.swift */,
 				DB2448542A349240000C43AE /* HomeViewController.swift */,
@@ -170,7 +165,7 @@
 				DB58FF232A34D55700D8ABE4 /* MainTabbarController.swift */,
 				DB58FF272A34E2E200D8ABE4 /* RecordViewController.swift */,
 			);
-			path = Controllers;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		0936A4162A351F36006A027B /* Service */ = {
@@ -186,34 +181,55 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		887FE14F2A37566D00456901 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				0936A3F52A345033006A027B /* Model */,
+				0936A3F62A345039006A027B /* View */,
+				0936A3F72A34503E006A027B /* Controller */,
+				887FE1502A375E8D00456901 /* Network */,
+				DB2448482A348F77000C43AE /* Util */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		887FE1502A375E8D00456901 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0936A4162A351F36006A027B /* Service */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		DB2448472A348F4F000C43AE /* Resource */ = {
 			isa = PBXGroup;
 			children = (
 				DB24484C2A348FE1000C43AE /* Pretendard-Bold.otf */,
 				DB24484E2A348FE1000C43AE /* Pretendard-Medium.otf */,
 				DB24484D2A348FE1000C43AE /* Pretendard-Regular.otf */,
-				0936A3E22A344ECB006A027B /* Assets.xcassets */,
 				88526A592A355AFF00346455 /* sample.gif */,
+				0936A3E22A344ECB006A027B /* Assets.xcassets */,
+				0936A3E42A344ECB006A027B /* LaunchScreen.storyboard */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		DB2448482A348F77000C43AE /* Utils */ = {
+		DB2448482A348F77000C43AE /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				DB2448492A348F80000C43AE /* Extensions */,
+				DB2448492A348F80000C43AE /* Extension */,
 			);
-			path = Utils;
+			path = Util;
 			sourceTree = "<group>";
 		};
-		DB2448492A348F80000C43AE /* Extensions */ = {
+		DB2448492A348F80000C43AE /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				DB24484A2A348FA2000C43AE /* UIFont+.swift */,
-				DB2448522A349099000C43AE /* UIColor+.swift */,
-				DB58FF252A34E20E00D8ABE4 /* NotificationName+.swift */,
+				DB24484A2A348FA2000C43AE /* UIFont.swift */,
+				DB2448522A349099000C43AE /* UIColor.swift */,
+				DB58FF252A34E20E00D8ABE4 /* NotificationName.swift */,
 			);
-			path = Extensions;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,8 +323,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				88526A542A354BDA00346455 /* DiaryService.swift in Sources */,
-				DB58FF262A34E20E00D8ABE4 /* NotificationName+.swift in Sources */,
-				DB24484B2A348FA2000C43AE /* UIFont+.swift in Sources */,
+				DB58FF262A34E20E00D8ABE4 /* NotificationName.swift in Sources */,
+				DB24484B2A348FA2000C43AE /* UIFont.swift in Sources */,
 				0936A40B2A348987006A027B /* MonthCalendarViewController.swift in Sources */,
 				0924A6872A352F0B00AACE10 /* CalendarService.swift in Sources */,
 				DB58FF282A34E2E200D8ABE4 /* RecordViewController.swift in Sources */,
@@ -332,7 +348,7 @@
 				0936A3DA2A344EC9006A027B /* AppDelegate.swift in Sources */,
 				0936A3DC2A344EC9006A027B /* SceneDelegate.swift in Sources */,
 				0924A6892A35517000AACE10 /* UserInfo.swift in Sources */,
-				DB2448532A349099000C43AE /* UIColor+.swift in Sources */,
+				DB2448532A349099000C43AE /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,7 +487,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JA7UDVTQBU;
+				DEVELOPMENT_TEAM = 43222PSGBA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = O_Team/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -483,7 +499,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.NativeVideoPicker;
+				PRODUCT_BUNDLE_IDENTIFIER = "jc.O-Team";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -498,7 +514,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JA7UDVTQBU;
+				DEVELOPMENT_TEAM = 43222PSGBA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = O_Team/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -510,7 +526,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.NativeVideoPicker;
+				PRODUCT_BUNDLE_IDENTIFIER = "jc.O-Team";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
