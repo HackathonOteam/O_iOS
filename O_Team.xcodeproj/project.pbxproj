@@ -28,7 +28,6 @@
 		88526A542A354BDA00346455 /* DiaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88526A532A354BDA00346455 /* DiaryService.swift */; };
 		88526A562A35524100346455 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88526A552A35524100346455 /* SummaryViewController.swift */; };
 		88526A582A35538B00346455 /* SummaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88526A572A35538B00346455 /* SummaryService.swift */; };
-		88526A5A2A355AFF00346455 /* sample.gif in Resources */ = {isa = PBXBuildFile; fileRef = 88526A592A355AFF00346455 /* sample.gif */; };
 		885C7BFB2A353CA300FC7E15 /* RecoringModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C7BFA2A353CA300FC7E15 /* RecoringModel.swift */; };
 		885C7BFD2A353DB000FC7E15 /* ListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C7BFC2A353DB000FC7E15 /* ListService.swift */; };
 		887030AB2A34F0B90086F7E3 /* Gifu in Frameworks */ = {isa = PBXBuildFile; productRef = 887030AA2A34F0B90086F7E3 /* Gifu */; };
@@ -67,7 +66,6 @@
 		88526A532A354BDA00346455 /* DiaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryService.swift; sourceTree = "<group>"; };
 		88526A552A35524100346455 /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		88526A572A35538B00346455 /* SummaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryService.swift; sourceTree = "<group>"; };
-		88526A592A355AFF00346455 /* sample.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = sample.gif; path = ../../../sample.gif; sourceTree = "<group>"; };
 		885C7BFA2A353CA300FC7E15 /* RecoringModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoringModel.swift; sourceTree = "<group>"; };
 		885C7BFC2A353DB000FC7E15 /* ListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListService.swift; sourceTree = "<group>"; };
 		88ECD9F72A34D32400556142 /* RegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 				DB24484C2A348FE1000C43AE /* Pretendard-Bold.otf */,
 				DB24484E2A348FE1000C43AE /* Pretendard-Medium.otf */,
 				DB24484D2A348FE1000C43AE /* Pretendard-Regular.otf */,
-				88526A592A355AFF00346455 /* sample.gif */,
 				0936A3E22A344ECB006A027B /* Assets.xcassets */,
 				0936A3E42A344ECB006A027B /* LaunchScreen.storyboard */,
 			);
@@ -310,7 +307,6 @@
 				DB2448512A348FE1000C43AE /* Pretendard-Medium.otf in Resources */,
 				DB2448502A348FE1000C43AE /* Pretendard-Regular.otf in Resources */,
 				DB24484F2A348FE1000C43AE /* Pretendard-Bold.otf in Resources */,
-				88526A5A2A355AFF00346455 /* sample.gif in Resources */,
 				0936A3E32A344ECB006A027B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
