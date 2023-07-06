@@ -2,88 +2,90 @@ import UIKit
 import SnapKit
 import Gifu
 
-class RegistViewController: UIViewController {
-    let Requestregister = UserService()
-    let textField = UITextField()
-    let completeButton = UIButton()
-    let label = UILabel()
-    let line = CALayer()
-    let gifImageView = GIFImageView()
+final class RegistViewController: UIViewController {
+    private let Requestregister = UserService()
+    
+    private let titleLabel = UILabel().then {
+        $0.font = .pretendard(.bold, size: 24)
+        $0.numberOfLines = 2
+        $0.text = "타래에 오신 걸 환영해요!\n성함이 어떻게 되시나요?"
+        $0.textAlignment = .center
+    }
+    
+    private let nameInputTextField = UITextField().then {
+        $0.attributedPlaceholder = NSAttributedString(string: "성함을 입력해주세요.",attributes: [ .font : UIFont.pretendard(.regular, size: 12),
+                                                                                          .foregroundColor : UIColor.subGrayColor])
+        $0.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 1))
+        $0.leftViewMode = .always
+        $0.backgroundColor = .backGroundColor
+        $0.layer.cornerRadius = 8
+    }
+    
+    private let completeButton = UIButton(type: .system).then {
+        $0.setTitle("입력완료", for: .normal)
+        $0.titleLabel?.font = .pretendard(.bold, size: 16)
+        $0.setTitleColor(.white, for: .normal)
+        $0.layer.cornerRadius = 8
+        $0.backgroundColor = .activeBlueColor
+    }
+    
+    private let gifImageView = GIFImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
-        setupUI()
-        setupConstraints()
-        gifImageView.prepareForAnimation(withGIFNamed: "sample")
-        gifImageView.animate(withGIFNamed: "sample")
+        self.view.backgroundColor = .white
+        
+        self.addSubView()
+        self.layout()
+        
+        gifImageView.prepareForAnimation(withGIFNamed: "sample5")
+        gifImageView.animate(withGIFNamed: "sample5")
+        
+        self.nameInputTextField.delegate = self
     }
     
-    private func setupUI() {
-        label.numberOfLines = 2
-        label.text = "타래에 오신 걸 환영해요!\n성함이 어떻게 되세요!"
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 25)
-        view.addSubview(label)
+    private func addSubView() {
+        self.view.addSubview(titleLabel)
+        self.view.addSubview(nameInputTextField)
+        self.view.addSubview(gifImageView)
+        self.view.addSubview(completeButton)
         
-        gifImageView.contentMode = .scaleAspectFit
-        view.addSubview(gifImageView)
-        
-        
-        textField.placeholder = "성함을 입력해주세요"
-        textField.backgroundColor = UIColor.blue.withAlphaComponent(0.1).resolvedColor(with: UIScreen.main.traitCollection)
-        textField.layer.cornerRadius = 10.0
-        textField.layer.borderColor = UIColor.blue.cgColor
-        let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
-        textField.leftView = leftPaddingView
-        textField.leftViewMode = .always
-
-        textField.delegate = self
-        view.addSubview(textField)
-        
-        completeButton.setTitle("입력완료", for: .normal)
-        completeButton.setTitleColor(.white, for: .normal)
-        completeButton.layer.cornerRadius = 10.0
-        completeButton.backgroundColor = .gray
-        completeButton.addTarget(self, action: #selector(completeButtonTapped), for: .touchUpInside)
-        view.addSubview(completeButton)
+        completeButton.addTarget(self, action: #selector(didClickCompletionButton), for: .touchUpInside)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        view.addGestureRecognizer(tapGesture)
+        self.view.addGestureRecognizer(tapGesture)
     }
     
-    private func setupConstraints() {
-        label.snp.makeConstraints {
+    private func layout() {
+        self.titleLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalToSuperview().offset(88)
         }
         
-        gifImageView.snp.makeConstraints {
-            $0.left.equalToSuperview().offset(81)
-            $0.top.equalToSuperview().offset(234)
-            $0.width.equalTo(203)
-            $0.height.equalTo(203)
+        self.gifImageView.snp.makeConstraints {
+            $0.top.equalTo(self.titleLabel.snp.bottom).offset(70)
+            $0.leading.trailing.equalToSuperview().inset(80)
+            $0.height.equalTo(140)
         }
         
-        textField.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().offset(494)
-            $0.width.equalTo(327)
+        self.nameInputTextField.snp.makeConstraints {
+            $0.top.equalTo(self.gifImageView.snp.bottom).offset(100)
+            $0.leading.trailing.equalToSuperview().inset(24)
             $0.height.equalTo(52)
         }
         
-        completeButton.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.bottom.equalToSuperview().offset(-72)
-            $0.width.equalTo(327)
+        self.completeButton.snp.makeConstraints {
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-24)
             $0.height.equalTo(52)
+            $0.leading.trailing.equalToSuperview().inset(24)
         }
     }
     
-    @objc private func completeButtonTapped() {
-        if textField.text != "" {
-            Requestregister.PostJoin(userName: textField.text!) { UserResponse in
-                UserDefaults.standard.setValue(self.textField.text, forKey: "key")
+    @objc private func didClickCompletionButton() {
+        if let text = self.nameInputTextField.text,
+           text != "" {
+            Requestregister.PostJoin(userName: text) { UserResponse in
+                UserDefaults.standard.setValue(text, forKey: "key")
                 self.dismiss(animated: true)
             }
         } else {
@@ -103,7 +105,7 @@ extension RegistViewController: UITextFieldDelegate {
             
             if !updatedText.isEmpty {
                 completeButton.isEnabled = true
-                completeButton.backgroundColor = .blue
+                completeButton.backgroundColor = .activeBlueColor
             } else {
                 completeButton.isEnabled = false
                 completeButton.backgroundColor = .gray

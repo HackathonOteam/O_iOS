@@ -45,6 +45,8 @@
 		DB58FF282A34E2E200D8ABE4 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB58FF272A34E2E200D8ABE4 /* RecordViewController.swift */; };
 		DB58FF2A2A34E7AD00D8ABE4 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB58FF292A34E7AD00D8ABE4 /* RecordCell.swift */; };
 		DB58FF2C2A34E99D00D8ABE4 /* ChatLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB58FF2B2A34E99D00D8ABE4 /* ChatLabel.swift */; };
+		DB98D4EE2A570C060096D88F /* sample.gif in Resources */ = {isa = PBXBuildFile; fileRef = DB98D4ED2A570C060096D88F /* sample.gif */; };
+		DB98D4F02A57111E0096D88F /* sample5.gif in Resources */ = {isa = PBXBuildFile; fileRef = DB98D4EF2A57111E0096D88F /* sample5.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		DB58FF272A34E2E200D8ABE4 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		DB58FF292A34E7AD00D8ABE4 /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 		DB58FF2B2A34E99D00D8ABE4 /* ChatLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLabel.swift; sourceTree = "<group>"; };
+		DB98D4ED2A570C060096D88F /* sample.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = sample.gif; path = ../../../../../../Downloads/sample.gif; sourceTree = "<group>"; };
+		DB98D4EF2A57111E0096D88F /* sample5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sample5.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,8 @@
 				0936A3E72A344ECB006A027B /* Info.plist */,
 				0936A3D92A344EC9006A027B /* AppDelegate.swift */,
 				0936A3DB2A344EC9006A027B /* SceneDelegate.swift */,
+				DB98D4ED2A570C060096D88F /* sample.gif */,
+				DB98D4EF2A57111E0096D88F /* sample5.gif */,
 			);
 			path = O_Team;
 			sourceTree = "<group>";
@@ -307,7 +313,9 @@
 				DB2448512A348FE1000C43AE /* Pretendard-Medium.otf in Resources */,
 				DB2448502A348FE1000C43AE /* Pretendard-Regular.otf in Resources */,
 				DB24484F2A348FE1000C43AE /* Pretendard-Bold.otf in Resources */,
+				DB98D4EE2A570C060096D88F /* sample.gif in Resources */,
 				0936A3E32A344ECB006A027B /* Assets.xcassets in Resources */,
+				DB98D4F02A57111E0096D88F /* sample5.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
