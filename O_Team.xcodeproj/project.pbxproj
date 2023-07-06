@@ -123,6 +123,8 @@
 				887FE14F2A37566D00456901 /* Source */,
 				DB2448472A348F4F000C43AE /* Resource */,
 				0936A3E72A344ECB006A027B /* Info.plist */,
+				0936A3D92A344EC9006A027B /* AppDelegate.swift */,
+				0936A3DB2A344EC9006A027B /* SceneDelegate.swift */,
 			);
 			path = O_Team;
 			sourceTree = "<group>";
@@ -152,8 +154,6 @@
 		0936A3F72A34503E006A027B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0936A3D92A344EC9006A027B /* AppDelegate.swift */,
-				0936A3DB2A344EC9006A027B /* SceneDelegate.swift */,
 				0936A3DD2A344EC9006A027B /* ViewController.swift */,
 				0936A3F82A345066006A027B /* TempViewController.swift */,
 				0936A40A2A348987006A027B /* MonthCalendarViewController.swift */,
@@ -483,7 +483,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 43222PSGBA;
+				DEVELOPMENT_TEAM = V2YNV9QV27;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = O_Team/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -510,7 +510,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 43222PSGBA;
+				DEVELOPMENT_TEAM = V2YNV9QV27;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = O_Team/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
