@@ -61,14 +61,14 @@ class MonthCalendarViewController: UIViewController {
     
     func setConfigure() {
         let navigationBarAppearance = UINavigationBarAppearance()
-        navigationBarAppearance.backgroundColor = .BackGroundColor
+        navigationBarAppearance.backgroundColor = .backGroundColor
         navigationBarAppearance.configureWithTransparentBackground()
         navigationBarAppearance.shadowImage = UIImage()
 
         navigationController!.navigationBar.standardAppearance = navigationBarAppearance
         navigationController!.navigationBar.scrollEdgeAppearance = navigationBarAppearance
         self.navigationItem.title = "이번 달 감정"
-        self.view.backgroundColor = .BackGroundColor
+        self.view.backgroundColor = .backGroundColor
         
         scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = true
