@@ -60,7 +60,9 @@ final class SummaryViewController: UIViewController {
         let userName = UserDefaults.standard.string(forKey: "key") ?? ""
         
         SummaryService.getSummary(userName) { response in
-            self.emotionImageView.image = UIImage(named: response.emotion)
+            print(response.emotion)
+            let emotion = response.emotion.filter{ $0.isLetter } + "Effect"
+            self.emotionImageView.image = UIImage(named: emotion)
             self.contentLabel.text = response.summary
             
             let components = response.date.split(separator: ".")

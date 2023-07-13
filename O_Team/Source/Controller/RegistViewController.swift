@@ -9,6 +9,7 @@ final class RegistViewController: UIViewController {
         $0.font = .pretendard(.bold, size: 24)
         $0.numberOfLines = 2
         $0.text = "타래에 오신 걸 환영해요!\n성함이 어떻게 되시나요?"
+        $0.textColor = .black
         $0.textAlignment = .center
     }
     
@@ -16,6 +17,7 @@ final class RegistViewController: UIViewController {
         $0.attributedPlaceholder = NSAttributedString(string: "성함을 입력해주세요.",attributes: [ .font : UIFont.pretendard(.regular, size: 12),
                                                                                           .foregroundColor : UIColor.subGrayColor])
         $0.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 1))
+        $0.textColor = .black
         $0.leftViewMode = .always
         $0.backgroundColor = .backGroundColor
         $0.layer.cornerRadius = 8
