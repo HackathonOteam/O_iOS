@@ -1,5 +1,6 @@
 import UIKit
 import Speech
+import Gifu
 
 final class RecordViewController: UIViewController {
     // MARK: - Properties
@@ -29,6 +30,17 @@ final class RecordViewController: UIViewController {
         $0.tintColor = .white
     }
     
+    private let recordFrameView = UIView().then {
+        $0.backgroundColor = .backGroundColor
+        $0.layer.cornerRadius = 8
+        $0.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
+    }
+    
+    private let recordView = GIFImageView().then {
+        $0.contentMode = .scaleAspectFit
+        $0.isHidden = true
+    }
+    
     init(isPresentType: Bool) {
         self.isPresentType = isPresentType
         super.init(nibName: nil, bundle: nil)
@@ -42,18 +54,21 @@ final class RecordViewController: UIViewController {
         let item = UIBarButtonItem(title: "기록 완료", style: .done, target: self, action: #selector(self.didClickDoneButton))
         item.tintColor = UIColor(red: 255/255, green: 127/255, blue: 127/255, alpha: 1)
         self.navigationItem.rightBarButtonItem = item
+        
         ListService.getList() { array in
             let model = RecoringModel()
             model.answer = nil
             model.question = "오늘 일어났던 일들 중에서 기억에 가장 많이 남는 일은 어떤 것인가요?"
             self.dataArray.append(model)
+            print(array)
             array.forEach {
                 let model = RecoringModel()
                 model.answer = $0.contents
                 model.question = $0.answer
                 self.dataArray.append(model)
-                self.contentTableView.reloadData()
             }
+            print(self.dataArray)
+            self.contentTableView.reloadData()
         }
     }
     
@@ -64,7 +79,14 @@ final class RecordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        self.title = "XX월 XX일의 기록"
+        recordView.prepareForAnimation(withGIFNamed: "wave")
+        
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "M월 dd일의 기록"
+        dateFormatter.locale = .current
+        dateFormatter.timeZone = .current
+        self.title = dateFormatter.string(from: date)
         
         self.addSubView()
         self.layout()
@@ -77,6 +99,20 @@ final class RecordViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = .subGrayColor
         
         self.recordButton.addTarget(self, action: #selector(didClickRecordButton), for: .touchUpInside)
+        
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.titleTextAttributes = [.foregroundColor : UIColor.darkText,
+                                                       .font : UIFont.pretendard(.bold, size: 16)]
+        navigationBarAppearance.backgroundColor = .backGroundColor
+        navigationBarAppearance.configureWithTransparentBackground()
+        navigationBarAppearance.shadowImage = UIImage()
+
+        navigationController!.navigationBar.standardAppearance = navigationBarAppearance
+        navigationController!.navigationBar.scrollEdgeAppearance = navigationBarAppearance
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     @objc private func dismissVC() {
@@ -92,15 +128,31 @@ final class RecordViewController: UIViewController {
         if self.audioEngine.isRunning {
             self.audioEngine.stop()
             self.recognitionRequest?.endAudio()
+            self.recordFrameView.backgroundColor = .backGroundColor
+            self.recordView.isHidden = true
             self.recordButton.setImage(UIImage(named: "mike"), for: .normal)
         } else {
             self.startRecoding()
             self.recordButton.setImage(UIImage(named: "pause"), for: .normal)
+
+            animateRecordView()
+        }
+    }
+    
+    func animateRecordView() {
+        self.recordView.isHidden = false
+        recordView.animate(withGIFNamed: "wave")
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn) {
+            self.recordFrameView.backgroundColor = .activeBlueColor
+            
+            self.loadViewIfNeeded()
         }
     }
     
     private func addSubView() {
         self.view.addSubview(self.contentTableView)
+        self.view.addSubview(self.recordFrameView)
+        self.recordFrameView.addSubview(self.recordView)
         self.view.addSubview(self.recordButton)
     }
     
@@ -116,6 +168,16 @@ final class RecordViewController: UIViewController {
             $0.trailing.equalToSuperview().offset(-24)
             $0.width.equalTo(72)
             $0.height.equalTo(50)
+        }
+        
+        self.recordFrameView.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(24)
+            $0.top.bottom.equalTo(self.recordButton)
+            $0.trailing.equalTo(self.recordButton.snp.leading)
+        }
+        
+        self.recordView.snp.makeConstraints {
+            $0.top.leading.bottom.trailing.equalToSuperview()
         }
     }
 }
@@ -153,8 +215,7 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RecordCell.identifier, for: indexPath) as! RecordCell
         cell.prepareForReuse()
-        cell.answerLabel.text = self.dataArray[indexPath.row].answer
-        cell.questionLabel.text = self.dataArray[indexPath.row].question
+        cell.configureCell(self.dataArray[indexPath.row])
         
         if indexPath.row == self.dataArray.count - 1 {
             cell.questionLabel.font = .pretendard(.bold, size: 28)

@@ -8,7 +8,7 @@ struct DiaryMonthly: Codable {
 
 struct Diary: Codable {
     let contents: String
-    let date: String
+    let date: String?
     let emotion: String
 }
 
@@ -21,8 +21,9 @@ struct DiaryData: Codable {
 }
 
 struct DiaryMonthResponse: Codable {
-    let date: String
+    let date: String?
     let emotion: String
+    let contents: String
 }
 
 class CalendarService {
@@ -33,9 +34,24 @@ class CalendarService {
                    method: .get,
                    parameters: nil,
                    headers: nil)
+        .responseString{ response in
+                switch response.result {
+                case .success(let response):
+                    print("-------")
+                    print(response)
+                    print("-------")
+//                   onCompletion(response)
+                case .failure(let error):
+                    print("first error: \(error.localizedDescription)")
+                    onCompletion(nil)
+                }
+            }
         .responseDecodable(of: DiaryData.self) { response in
                 switch response.result {
                 case .success(let response):
+                    print("-------")
+                    print(response.anniversaryDiary)
+                    print("-------")
                    onCompletion(response)
                 case .failure(let error):
                     print("first error: \(error.localizedDescription)")
@@ -53,6 +69,18 @@ class CalendarService {
                    parameters: nil,
                    encoding: JSONEncoding.default,
                    headers: nil)
+        .responseString() { response in
+            print(response.debugDescription)
+            switch response.result {
+            case .success(let response):
+                print("12312312312312312312312312")
+                print(response)
+//                onCompletion(response)
+            case .failure(let error):
+                print("monthlyEmotion error: \(error.localizedDescription)")
+                onCompletion(nil)
+            }
+        }
             .responseDecodable(of: DiaryMonthlyResponse.self) { response in
                 print(response.debugDescription)
                 switch response.result {

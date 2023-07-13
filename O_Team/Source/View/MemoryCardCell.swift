@@ -6,12 +6,14 @@ final class MemoryCardCell: UICollectionViewCell {
     //MARK: - Properties
     public let titleLabel = UILabel().then {
         $0.font = .pretendard(.bold, size: 24)
+        $0.numberOfLines = 0
         $0.textColor = .mainTextColor
         $0.text = "제목"
     }
     
     public let imotionImageView = UIImageView().then {
-        $0.contentMode = .scaleAspectFit
+        $0.contentMode = .center
+        $0.backgroundColor = .white
         $0.image = UIImage(named: "HappyEmotion")?.withRenderingMode(.alwaysOriginal)
     }
     
@@ -24,6 +26,7 @@ final class MemoryCardCell: UICollectionViewCell {
     public let contentLabel = UILabel().then {
         $0.text = "내용"
         $0.textColor = .subGrayColor
+        $0.numberOfLines = 3
         $0.font = .pretendard(.regular, size: 14)
     }
     
@@ -66,7 +69,8 @@ final class MemoryCardCell: UICollectionViewCell {
         }
         
         self.imotionImageView.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.centerX.equalToSuperview()
+            $0.width.height.equalTo(150)
             $0.top.equalTo(self.titleLabel.snp.bottom).offset(38)
         }
         

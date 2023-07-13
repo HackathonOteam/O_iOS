@@ -29,15 +29,27 @@ class MonthCalendarViewController: UIViewController {
         super.viewDidLoad()
         setConfigure()
         setCollectionView()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.api.getMonthEmotion(yearMonth: "20XX-XX", userName: "\(String(describing: userNickname))" /*"userNickname"*/) { DiaryMonthResponse in
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM"
+        dateFormatter.locale = .current
+        dateFormatter.timeZone = .current
+//        self.title = dateFormatter.string(from: date)
+        guard let userName = UserDefaults.standard.string(forKey: "key") else { return }
+        
+        self.api.getMonthEmotion(yearMonth: dateFormatter.string(from: date), userName: userName) { DiaryMonthResponse in
             // print(DiaryMonthResponse?.count/* as Any*/)
             self.count = Int(DiaryMonthResponse?.count ?? 0)
             self.collectionview.reloadData()
             self.month = DiaryMonthResponse!
         }
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.darkText,
+                                                                        .font : UIFont.pretendard(.bold, size: 16)]
     }
     
     func setCollectionView() {
@@ -64,9 +76,17 @@ class MonthCalendarViewController: UIViewController {
         navigationBarAppearance.backgroundColor = .backGroundColor
         navigationBarAppearance.configureWithTransparentBackground()
         navigationBarAppearance.shadowImage = UIImage()
+        navigationBarAppearance.titleTextAttributes = [.foregroundColor : UIColor.darkText,
+                                                       .font : UIFont.pretendard(.bold, size: 16)]
 
         navigationController!.navigationBar.standardAppearance = navigationBarAppearance
         navigationController!.navigationBar.scrollEdgeAppearance = navigationBarAppearance
+        
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.backgroundColor = .white
+        self.tabBarController?.tabBar.standardAppearance = tabBarAppearance
+        self.tabBarController?.tabBar.scrollEdgeAppearance = tabBarAppearance
+        
         self.navigationItem.title = "이번 달 감정"
         self.view.backgroundColor = .backGroundColor
         
@@ -111,10 +131,16 @@ class MonthCalendarViewController: UIViewController {
             $0.height.equalTo(440)
         }
         
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY년 MM월의 감정 분석 카드"
+        dateFormatter.locale = .current
+        dateFormatter.timeZone = .current
+        
         emotionaldateLabel = UILabel()
         emotionaldateLabel.textColor = UIColor(red: 0.775, green: 0.773, blue: 0.773, alpha: 1)
         emotionaldateLabel.font =  UIFont(name: "Pretendard-Bold", size: 16)
-        emotionaldateLabel.text = "20XX년 XX월의 감정 분석 카드"
+        emotionaldateLabel.text = dateFormatter.string(from: date)
         emotionanalyzeView.addSubview(emotionaldateLabel)
         
         emotionaldateLabel.snp.makeConstraints {
@@ -124,11 +150,12 @@ class MonthCalendarViewController: UIViewController {
             $0.width.equalTo(295)
             $0.height.equalTo(26)
         }
+        guard let userName = UserDefaults.standard.string(forKey: "key") else { return }
         
         userNickname = UILabel()
         userNickname.textColor = UIColor(red: 0.35, green: 0.35, blue: 0.35, alpha: 1)
         userNickname.font =  UIFont(name: "Pretendard-Bold", size: 24)
-        userNickname.text = "\(String(describing: userNickname))님" /*"userNickname"*/
+        userNickname.text = "\(userName)님" /*"userNickname"*/
         userNickname.sizeToFit()
         emotionanalyzeView.addSubview(userNickname)
         
@@ -150,7 +177,6 @@ class MonthCalendarViewController: UIViewController {
             $0.height.equalTo(40)
         }
         
-        welcomeComment = UILabel()
         welcomeComment = UILabel()
         welcomeComment.textColor = UIColor(red: 0.77, green: 0.84, blue: 0.241, alpha: 1)
         welcomeComment.font =  UIFont(name: "Pretendard-Bold", size: 24)
@@ -240,8 +266,10 @@ class MonthCalendarViewController: UIViewController {
             $0.height.equalTo(44)
         }
         
+        dateFormatter.dateFormat = "YYYY년 MM월의 기록"
+        
         dateLabel = UILabel()
-        dateLabel.text = "20XX년 XX월의 기록"
+        dateLabel.text = dateFormatter.string(from: date)
         dateLabel.textColor = .white
         dateLabel.textAlignment = .center
         dateview.addSubview(dateLabel)

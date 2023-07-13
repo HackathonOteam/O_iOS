@@ -32,6 +32,7 @@ class DiaryService {
             .responseDecodable(of:RecordingResponseModel.self) { response in
                 switch response.result {
                 case .success(let model):
+                    print(model)
                     completion(model)
                 case .failure(let error):
                     print(error)

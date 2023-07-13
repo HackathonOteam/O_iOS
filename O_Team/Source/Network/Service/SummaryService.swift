@@ -11,8 +11,19 @@ class SummaryService {
     static func getSummary(_ name: String, _ completion: @escaping (ResponseSummary) -> Void) {
         let url = "http://tarae-env.eba-uepb7id2.ap-northeast-2.elasticbeanstalk.com:80/api/record/summary"
         let parameter: Parameters = ["name": name]
-        
+        print(name)
         AF.request(url, method: .post, parameters: parameter, encoding: JSONEncoding.default)
+            .responseString() { response in
+                switch response.result {
+                case .success(let model):
+                    print("--------asdasdasdas-d-as--sad-")
+                    print(model)
+//                    completion(model)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+
             .responseDecodable(of: ResponseSummary.self) { response in
                 switch response.result {
                 case .success(let model):

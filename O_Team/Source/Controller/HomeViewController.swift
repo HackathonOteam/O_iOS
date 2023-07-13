@@ -3,16 +3,17 @@ import SnapKit
 import Then
 
 final class HomeViewController: UIViewController {
+    //MARK: - Properties
     let api = CalendarService()
     var diaryData:[Diary] = []
     let userinfo = UserInfo.shared
-    //MARK: - Properties
+    
     private let topBackgroundView = UIView().then {
         $0.backgroundColor = .subLighten
     }
     
     private let titleLabel = UILabel().then {
-        $0.text = "name"
+        $0.text = "사용자님,\n기억해야할 것들을\n알려드릴게요"
         $0.font = .pretendard(.medium, size: 20)
         $0.textColor = .white
         $0.numberOfLines = 0
@@ -36,28 +37,38 @@ final class HomeViewController: UIViewController {
     // MARK: - LifeCycle
     override func viewWillAppear(_ animated: Bool) {
         // MARK: API Call Failed
-        self.api.getHomeVideoList(userName: "타래", today: "20XX-XX-XX") { DiaryResoponse in
-            // print(DiaryResoponse/* as Any*/)
-            if self.userinfo.Join == 0 {
-                guard let res = DiaryResoponse else {return}
-                self.diaryData.append(res.anniversaryDiary)
+        guard let userName = UserDefaults.standard.string(forKey: "key") else { return }
+        
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        dateFormatter.locale = .current
+        dateFormatter.timeZone = .current
+
+        memoryCardCollectionView.backgroundView = DefaultView()
+        self.api.getHomeVideoList(userName: userName, today: dateFormatter.string(from: date)) { DiaryResoponse in
+            self.diaryData = []
+            
+            guard let res = DiaryResoponse else {return}
+            if res.anniversaryDiary.date == nil && res.yearAgoDiary.date == nil && res.positiveDiary.date == nil {
+            } else {
                 self.diaryData.append(res.positiveDiary)
                 self.diaryData.append(res.yearAgoDiary)
-                // print(self.diaryData.count)
-                self.memoryCardCollectionView.reloadData()
-                self.userinfo.Join += 1
-            } else {
-                
+                self.diaryData.append(res.anniversaryDiary)
             }
+            
+            self.memoryCardCollectionView.reloadData()
         }
         
-        guard let userName = UserDefaults.standard.string(forKey: "key") else { return }
-        self.titleLabel.text = userName + "님\n기억해야할 것들을 알려드릴게요"
         
+        self.titleLabel.text = userName + "님,\n기억해야할 것들을\n알려드릴게요"
         let text = self.titleLabel.text ?? ""
         let name = userName + "님,"
         let attributedStr = NSMutableAttributedString(string: text)
         attributedStr.addAttribute(.font, value: UIFont.pretendard(.bold, size: 20), range: (text as NSString).range(of: name))
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white,
+                                                                        .font : UIFont.pretendard(.bold, size: 16)]
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,8 +93,6 @@ final class HomeViewController: UIViewController {
     private func configureVC() {
         self.view.backgroundColor = .white
         self.title = "타래"
-        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white,
-                                                                        .font : UIFont.pretendard(.bold, size: 16)]
     }
     
     // MARK: - addSubView
@@ -138,29 +147,29 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MemoryCardCell.identifier, for: indexPath) as! MemoryCardCell
         
-        let dateString = diaryData[indexPath.row].date
-
         if indexPath.row == 0 {
             cell.titleLabel.text = "좋았던 기억을 떠올려보세요."
         } else if indexPath.row == 1 {
             cell.titleLabel.text = "1년전 오늘"
         } else {
-            cell.titleLabel.text = "누군가의 기념일에 대한 기록!"
-
+            cell.titleLabel.text = "누군가의 기념일에 대한\n기록이 있네요!"
         }
-        
+    
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.MM.dd"
-        if let date = dateFormatter.date(from: dateString) {
+        if let dateString = diaryData[indexPath.row].date,
+           let date = dateFormatter.date(from: dateString) {
             dateFormatter.dateFormat = "yyyy년 MM월 dd일"
             let formattedDate = dateFormatter.string(from: date)
-            // print(formattedDate)
             cell.dateLabel.text = formattedDate
-            cell.imotionImageView.image = UIImage(named: diaryData[indexPath.row].emotion)
-            cell.contentLabel.text = diaryData[indexPath.row].contents
+            cell.imotionImageView.image = UIImage(named: diaryData[indexPath.row].emotion + "Effect")
         } else {
-            print("failed")
+            cell.imotionImageView.image = UIImage(named: "BoringEmotionEffect")
+            cell.dateLabel.text = "기록이 아직 없어요."
         }
+        
+        
+        cell.contentLabel.text = diaryData[indexPath.row].contents
         
         return cell
     }
